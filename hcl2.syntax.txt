@@ -1,0 +1,111 @@
+
+変数を定義するブロック
+locals {
+  project　＝""
+  env = "dev"
+}
+resource "" {
+  tags = "${local.env}" //local.hogeで参照可能
+}
+
+外から変更できる変数
+variable "project" {
+  type = "string"
+  default = "sample-log"
+}
+resource "" {
+  tags = "${var.project}" //var.hogeで参照可能
+}
+======================
+変数の上書きについて
+variable "message" {
+  type = string
+  default = "nothing"
+}
+①
+export TF_VAR_message = "Hellow" //TF_VAR_変数名 で上書き
+②
+main.tfvars //拡張子を.tfvarsにする(ロジックと変数を切り分けられる)
+//main.tfvars
+message = "hellow"
+③
+//コマンド
+-var message="hello"
+======================
+terraformブロックについて
+バージョンを指定するなど
+terraform {
+
+}
+======================
+providerブロックについて
+
+provider {
+  profile = ""
+  region = ""
+}
+======================
+data ブロック
+管理対象外のデータを参照するブロック
+======================
+output ブロック
+外部のリソースから参照できるようにするブロック
+output "instance_id" {
+  value = "sample-id"
+}
+======================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
