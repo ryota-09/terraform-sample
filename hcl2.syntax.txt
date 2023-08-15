@@ -55,8 +55,28 @@ output "instance_id" {
 }
 ======================
 
+複数人でtfstateを管理する方法
+S3にバケットを用意する
+(本来は別のアカウントでバケットを作成する方が良い)
 
+terraform state list コマンド
+terraformが管理しているリソースを確認できる
 
+terraform state show <name> コマンド
+terraformが管理しているリソースの詳細情報を確認
+
+terraform state mv <source(変更前)> <destination(変更後名)>　コマンド
+同時に、tfファイルも変更
+※ tfファイルだけを変更すると、新たなリソースを作成されてしまう。NG。
+
+terraform import <address> <id> コマンド
+手作業で作成したリソースをterraform管理したいときのコマンド
+ex. terraform import aws_instance.test i-****
+その後、terraform state show  aws_instance.test コマンドで作成されたコードを見て、tfファイルに必須項目を追記する
+
+手修正を反映
+terraform refresh　コマンド
+tfstateを最新化するコマンド
 
 
 
