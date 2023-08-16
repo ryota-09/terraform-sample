@@ -92,11 +92,17 @@ for_each
 dotファイルを作成する
 terraform graph
 
+for文について
+[for s in var.list : uppercase(s)]
+配列からオブジェクト型へ
+{for s in var.list : s => uppdercase(s)}
+オブジェクトから配列へ
+[for key, value in var.object: uppdercase(value)]
+オブジェクトからオブジェクト型へ
+{for key, value in var.map : key  => uppdercase(value)}
 
-
-
-
-
+フィルター(else, then は使えない)
+[for s in var.list : uppdercase(s) if s != ""]
 
 
 
