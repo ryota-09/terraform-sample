@@ -78,8 +78,19 @@ ex. terraform import aws_instance.test i-****
 terraform refresh　コマンド
 tfstateを最新化するコマンド
 
+メタ引数について
+依存関係を手入力する
+depends_on
 
+指定された数
+count
 
+複数リソース生成
+for_each
+配列の場合はtoSet関数
+
+dotファイルを作成する
+terraform graph
 
 
 
