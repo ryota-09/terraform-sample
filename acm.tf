@@ -41,7 +41,7 @@ resource "aws_acm_certificate_validation" "cert_valid" {
 }
 
 resource "aws_acm_certificate" "virginia_cert" {
-  provider = aws.virginia
+  provider          = aws.virginia
   domain_name       = "*.${var.domain}"
   validation_method = "DNS"
 

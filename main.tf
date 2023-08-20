@@ -27,9 +27,9 @@ provider "aws" {
 }
 # cloud front 用
 provider "aws" {
-  alias = "virginia"
+  alias   = "virginia"
   profile = "terraform"
-  region = "us-east-1"
+  region  = "us-east-1"
 }
 
 # variables
