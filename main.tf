@@ -25,6 +25,12 @@ provider "aws" {
   profile = "terraform"
   region  = "ap-northeast-1"
 }
+# cloud front 用
+provider "aws" {
+  alias = "virginia"
+  profile = "terraform"
+  region = "us-east-1"
+}
 
 # variables
 variable "project" {
