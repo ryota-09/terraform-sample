@@ -7,14 +7,18 @@ data "aws_ami" "app" {
   owners      = ["self", "amazon"]
   filter {
     name   = "name"
-    values = ["al2023-ami-2023.1.*.0-kernel-6.1-x86_64"]
+    values = ["tasty-*-ami"]
   }
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
+  # filter {
+  #   name   = "name"
+  #   values = ["al2023-ami-2023.1.*.0-kernel-6.1-x86_64"]
+  # }
+  # filter {
+  #   name   = "root-device-type"
+  #   values = ["ebs"]
+  # }
+  # filter {
+  #   name   = "virtualization-type"
+  #   values = ["hvm"]
+  # }
 }
