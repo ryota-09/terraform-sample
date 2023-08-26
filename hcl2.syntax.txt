@@ -105,10 +105,23 @@ for文について
 [for s in var.list : uppdercase(s) if s != ""]
 
 
+モジュールについて
+moduleディレクトリ
+-variables.tf
+-main.tf
+-outputs.tf
+-README.md
 
 
+//root.tf
+モジュールブロック
+module "webserver" {
+  source = "./modules/dirname"
+}
 
-
+output "instance_id" {
+  value = modules.webserver.id
+}
 
 
 
